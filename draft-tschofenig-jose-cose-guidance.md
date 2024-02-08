@@ -2,7 +2,7 @@
 title: Guidance for COSE and JOSE Protocol Designers and Implementers
 
 abbrev: COSE/JOSE Guidance
-docname: draft-tschofenig-jose-cose-guidance-00
+docname: draft-tschofenig-jose-cose-guidance-latest
 category: bcp
 
 ipr: trust200902
