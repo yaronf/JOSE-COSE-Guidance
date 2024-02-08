@@ -113,7 +113,7 @@ The security wrapper contains the following structure:
  payload is a JSON-based payload (in case of JOSE) or a CBOR-encoded payload
  (in case of COSE). There are also standardize payloads, such as JSON Web Token
  (JWT) {{!RFC7519}} and CBOR Web Token (CWT) {{!RFC8392}}.
- 
+
  - A digital signature, a tag (for a MAC), or a ciphertext (for encryption).
 
 The purpose of the header is to provide instructions for the protection of
@@ -136,7 +136,7 @@ approach breaks the clear layering.
 The use of the 'kid' parameter is the preferred way to identify a key but
 nothing in {{RFC7515}} states that the key identification values must be
 globally unique (and therefore "collision resistant"). If a JOSE- or COSE-protected
-message is intended for external/3rd party recipients, then 
+message is intended for external/3rd party recipients, then
 
 - the 'kid' parameter MUST contain a globally unique value, or
 - other header parameters when combined with the 'kid' result in a
