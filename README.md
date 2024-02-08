@@ -1,6 +1,6 @@
-# TODO - Your title
+# draft-tschofenig-jose-cose-guidance
 
-This is the working area for the individual Internet-Draft, "TODO - Your title".
+This is the working area for the individual Internet-Draft, "draft-tschofenig-jose-cose-guidance".
 
 * [Editor's Copy](https://yaronf.github.io/JOSE-COSE-Guidance/#go.draft-tschofenig-jose-cose-guidance.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-tschofenig-jose-cose-guidance)
