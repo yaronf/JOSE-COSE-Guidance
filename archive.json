@@ -1,0 +1,135 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-02-11T00:50:36.765474+00:00",
+  "repo": "yaronf/JOSE-COSE-Guidance",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOLPtX-85-ujh2",
+      "title": "Carsten's Review for jose-cose-guidance",
+      "url": "https://github.com/yaronf/JOSE-COSE-Guidance/issues/1",
+      "state": "OPEN",
+      "author": "yaronf",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "(2) For COSE, the one subject discussed leads to a new MUST on a header parameter that defined in STD96 (kid, defined in RFC 9052, Section 3.1). I don't think a BCP can redefine a parameter defined in a standards-track document. RFC 9052 is quite explicit that \u00bbApplications MUST NOT assume that \"kid\" values are unique\u00ab:\r\n\r\nkid: This header parameter identifies one piece of data that can be\r\nused as input to find the needed cryptographic key. The value of\r\nthis header parameter can be matched against the \"kid\" member in a\r\nCOSE_Key structure. Other methods of key distribution can define\r\nan equivalent field to be matched. Applications MUST NOT assume\r\nthat \"kid\" values are unique. There may be more than one key with\r\nthe same \"kid\" value, so all of the keys associated with this\r\n\"kid\" may need to be checked. The internal structure of \"kid\"\r\nvalues is not defined and cannot be relied on by applications.\r\nKey identifier values are hints about which key to use. This is\r\nnot a security-critical field. For this reason, it can be placed\r\nin the unprotected-header-parameters bucket.\r\n\r\n(3) The rationale given in the draft for replacing the definition of this parameter with what essentially is a new definition is rather wobbly. It seems that the intention is not really to add security, but just to reduce the attack surface for attacks that continue to be possible if the \"guidance\" of the document is heeded.\r\n\r\n(4) The term \"globally unique\" is not defined. I don't think it actually means anything in the specification as it is being used.\r\n\r\nIf the intention is to define a globally unique Key ID, please define a header parameter that has the desired properties (e.g, \"gukid\", globally unique kid). For this, please define \"globally unique\".\r\n\r\nOr what we maybe should do here is define specific forms of the \"kid\" value that do have some desirable uniqueness properties. Proponents of the approach of this document can then recommend the use of one of these forms.\r\n\r\nBut what this document really tries to do has little to do with \"kid\", but can be summarized by a list of recommendations an expression of which I'll steal from an off-list discussion:\r\n\r\ntry not to deserialize untrusted data needlessly (reducing attack surface, not actually increasing security) \u2014 this is not just about kid.\r\nkid-related:\r\n2. try not to use identifiers for keys that suck (yes, need an operational definition of what that means)\r\n3. you are still responsible for establishing the actual authorization properties of the key (\"trusting\" it) before using it to verify / decrypt...\r\n-- but did you read all the warnings about how headers can be misleading, and maybe you are holding the wrong key?",
+      "createdAt": "2024-02-08T21:55:25Z",
+      "updatedAt": "2024-02-08T21:55:26Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 2,
+      "id": "I_kwDOLPtX-85-uj2j",
+      "title": "Uniqueness",
+      "url": "https://github.com/yaronf/JOSE-COSE-Guidance/issues/2",
+      "state": "OPEN",
+      "author": "yaronf",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "@yaronf: Within a domain, I suggest to replace \"the uniqueness requirements are lifted\" by \"the uniqueness requirements only apply within that domain\".",
+      "createdAt": "2024-02-08T21:56:34Z",
+      "updatedAt": "2024-02-08T21:56:35Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOLPtX-85-ukGt",
+      "title": "Standardized payloads",
+      "url": "https://github.com/yaronf/JOSE-COSE-Guidance/issues/3",
+      "state": "OPEN",
+      "author": "yaronf",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "@yaronf: I think it's incorrect to characterize JWTs as \"standardized payloads\", because they also include the signature and headers. More like a standardized profile of JOSE.",
+      "createdAt": "2024-02-08T21:57:29Z",
+      "updatedAt": "2024-02-08T21:57:29Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOLPtX-85-ukVv",
+      "title": "Add a reference to RFC 8725",
+      "url": "https://github.com/yaronf/JOSE-COSE-Guidance/issues/4",
+      "state": "OPEN",
+      "author": "yaronf",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "@yaronf: The JWT BCP.",
+      "createdAt": "2024-02-08T21:58:20Z",
+      "updatedAt": "2024-02-08T21:58:20Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOLPtX-85-xv2L",
+      "title": "CMS AES-GCM to AES-CBC downgrade attck",
+      "url": "https://github.com/yaronf/JOSE-COSE-Guidance/issues/5",
+      "state": "OPEN",
+      "author": "yaronf",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Hannes: I mentioned the downgrading attack from AES-GCM to AES-CBC. Russ wrote a draft about it for use with CMS:\r\n[draft-ietf-lamps-cms-cek-hkdf-sha256-00 - Encryption Key Derivation in the Cryptographic Message Syntax (CMS) using HKDF with SHA-256](https://datatracker.ietf.org/doc/draft-ietf-lamps-cms-cek-hkdf-sha256/)\r\n \r\nThe presentation was recorded here: [IETF118-LAMPS-20231108-1330 (youtube.com)](https://www.youtube.com/watch?v=Iwq3FlqIbtE)\r\nThe slides are here: [slides-118-lamps-attack-against-aead-in-cms-00 (ietf.org)](https://datatracker.ietf.org/meeting/118/materials/slides-118-lamps-attack-against-aead-in-cms-00)\r\nTheir paper is available here: [usenixsecurity23-ising.pdf](https://www.usenix.org/system/files/usenixsecurity23-ising.pdf)\r\n \r\nI believe the attack could also be applicable to COSE (maybe also to JOSE). At least I would like to explore it.",
+      "createdAt": "2024-02-09T11:43:47Z",
+      "updatedAt": "2024-02-09T11:43:47Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": []
+}
