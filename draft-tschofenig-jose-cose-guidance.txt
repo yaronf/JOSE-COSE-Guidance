@@ -5,7 +5,10 @@
 JOSE                                                       H. Tschofenig
 Internet-Draft                                                          
 Intended status: Best Current Practice                      L. Hazlewood
-Expires: 11 August 2024                                  8 February 2024
+Expires: 9 January 2025                                                 
+                                                              Y. Sheffer
+                                                                  Intuit
+                                                             8 July 2024
 
 
      Guidance for COSE and JOSE Protocol Designers and Implementers
@@ -38,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 August 2024.
+   This Internet-Draft will expire on 9 January 2025.
 
 Copyright Notice
 
@@ -267,3 +270,8 @@ Authors' Addresses
 
    Les Hazlewood
    Email: lhazlewood@gmail.com
+
+
+   Yaron Sheffer
+   Intuit
+   Email: yaronf.ietf@gmail.com
