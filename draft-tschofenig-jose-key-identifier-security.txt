@@ -3,28 +3,26 @@
 
 
 JOSE                                                       H. Tschofenig
-Internet-Draft                                                          
-Intended status: Best Current Practice                      L. Hazlewood
+Internet-Draft                                                     H-BRS
+Intended status: Standards Track                            L. Hazlewood
 Expires: 24 January 2025                                                
                                                               Y. Sheffer
                                                                   Intuit
                                                             23 July 2024
 
 
-     Guidance for COSE and JOSE Protocol Designers and Implementers
-               draft-tschofenig-jose-cose-guidance-latest
+            Security Aspects of Key Identifiers on COSE/JOSE
+          draft-tschofenig-jose-key-identifier-security-latest
 
 Abstract
 
-   JSON Object Signing and Encryption (JOSE) and CBOR Object Signing and
-   Encryption (COSE) are two widely used security wrappers, which have
-   been developed in the IETF and have intentionally been kept in sync.
-
-   This document provides guidance for protocol designers developing
-   extensions for JOSE/COSE and for implementers of JOSE/COSE libraries.
-   Developers of application using JSON and/or JOSE should also read
-   this document but are realistically more focused on the documentation
-   offered by the library they are using.
+   This document provides guidance for improving the security of JSON
+   Object Signing and Encryption (JOSE) and CBOR Object Signing and
+   Encryption (COSE) implementations.  It emphasizes the importance of
+   handling key identification within the header to simplify security
+   processing and reduce risks.  Recommendations are given to ensure
+   better interoperability and security for protocol designers and
+   implementers
 
 Status of This Memo
 
@@ -78,6 +76,9 @@ Table of Contents
    quickly recognized.  Today, JOSE is widely adopted and its
    functionality spans across various specifications (such as [RFC7515]
    for JSON Web Signature and [RFC7516] for JSON Web Encryption).
+   [RFC8725] was published to describe JSON Web Token (JWT) best current
+   practices to react to problems with the use of JOSE in context of
+   JWTs.
 
    With the development of CBOR [RFC8949], a binary encoding format was
    introduced to address use cases where JSON was too verbose.  A
@@ -93,14 +94,15 @@ Table of Contents
    similar designs, the guidance provided in this document is applicable
    to both JOSE and COSE.
 
-   However, certain practices pose security challenges, which are
-   addressed in this document.  Our aim is to assist in designing better
-   extensions for JOSE/COSE and to simplify developers' workflows.
+   However, certain practices pose security challenges.  This document
+   addresses security challenges and provides guidance for improving
+   JOSE/COSE extensions, emphasizing key identification.  Key
+   identification should be handled within the header to maintain a
+   clear separation from the payload, simplifying security processing
+   and reducing risks.
 
    The document is structured as follows: Section 3 outlines challenges
-   related to key identification.  Future versions of this document will
-   address additional challenges.  Section 4 provides recommendations on
-   creating improved designs for JOSE/COSE.
+   related to key identification.  Section 4 provides recommendations.
 
 2.  Terminology and Requirements Language
 
@@ -238,6 +240,11 @@ Table of Contents
               "CBOR Web Token (CWT)", RFC 8392, DOI 10.17487/RFC8392,
               May 2018, <https://www.rfc-editor.org/rfc/rfc8392>.
 
+   [RFC8725]  Sheffer, Y., Hardt, D., and M. Jones, "JSON Web Token Best
+              Current Practices", BCP 225, RFC 8725,
+              DOI 10.17487/RFC8725, February 2020,
+              <https://www.rfc-editor.org/rfc/rfc8725>.
+
    [RFC8949]  Bormann, C. and P. Hoffman, "Concise Binary Object
               Representation (CBOR)", STD 94, RFC 8949,
               DOI 10.17487/RFC8949, December 2020,
@@ -254,11 +261,12 @@ Table of Contents
 
 Appendix A.  Acknowledgments
 
-   TBD: Add your name here.
+   We would like to thank Casten Bormann for his review comments.
 
 Authors' Addresses
 
    Hannes Tschofenig
+   University of Applied Sciences Bonn-Rhein-Sieg
    Email: hannes.tschofenig@gmx.net
 
 
