@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-28T00:59:01.066156+00:00",
+  "timestamp": "2024-07-30T00:55:05.368948+00:00",
   "repo": "yaronf/JOSE-COSE-Guidance",
   "labels": [
     {
@@ -157,6 +157,32 @@
       "mergeCommit": {
         "oid": "44872879e761fa6964cf831dc5d2adf682c700c0"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOLPtX-852p44s",
+      "title": "Venue info (should be updated once draft is adopted)",
+      "url": "https://github.com/yaronf/JOSE-COSE-Guidance/pull/7",
+      "state": "OPEN",
+      "author": "yaronf",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-07-28T00:59:49Z",
+      "updatedAt": "2024-07-28T00:59:49Z",
+      "baseRepository": "yaronf/JOSE-COSE-Guidance",
+      "baseRefName": "main",
+      "baseRefOid": "9611ad6d718cb1729db59d478e578418e6d74d65",
+      "headRepository": "yaronf/JOSE-COSE-Guidance",
+      "headRefName": "ys-venue",
+      "headRefOid": "e1d9c8755c9c4745efdf72d2f7cd68d3b4bb62d1",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
