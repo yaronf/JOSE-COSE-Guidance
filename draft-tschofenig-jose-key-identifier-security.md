@@ -9,6 +9,10 @@ ipr: trust200902
 area: Security
 workgroup: JOSE
 keyword: Internet-Draft
+venue:
+  github: "yaronf/JOSE-COSE-Guidance"
+  latest: "https://www.sheffer.org/JOSE-COSE-Guidance/draft-tschofenig-jose-cose-guidance.html"
+
 
 stand_alone: yes
 pi:
